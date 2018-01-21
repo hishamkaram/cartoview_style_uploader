@@ -1,0 +1,35 @@
+{% extends "app_manager/app_install_base.html" %}
+{% load bootstrap_tags staticfiles %}
+{% load i18n %}
+
+{% block title %} {{ block.super }} - {% trans "Style Uploader" %} {% endblock %}
+{% block head %}
+    {% include "geonode/ext_header.html" %}
+    {% include "geonode/app_header.html" %}
+    {{ block.super }}
+    <style>
+    .top-space{
+        margin-top: 80px;
+    }
+    </style>
+{% endblock %}
+{% block body %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class='row top-space'>
+                <div class="col-md-12">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <button class="btn btn-primary" type="submit">Upload</button>
+                        </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block extra_script %}
+  
+ {% endblock %}

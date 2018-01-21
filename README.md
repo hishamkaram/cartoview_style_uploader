@@ -1,0 +1,1 @@
+Upload styles to Geoserver and manage them using Geonode
